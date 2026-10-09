@@ -1,0 +1,5 @@
+/target/
+/data/
+/.mvn/wrapper/dists/
+*.mv.db
+*.trace.db
