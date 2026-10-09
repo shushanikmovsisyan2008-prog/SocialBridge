@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="hy" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head(title)">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" th:content="${metaDescription}">
+        <meta name="robots" th:content="${robotsDirective}">
+        <meta name="theme-color" content="#1463d9">
+        <meta name="author" content="SocialBridge">
+        <meta property="og:site_name" content="SocialBridge">
+        <meta property="og:locale" content="hy_AM">
+        <meta property="og:type" content="website">
+        <meta property="og:title" th:content="${title}">
+        <meta property="og:description" th:content="${metaDescription}">
+        <meta property="og:url" th:content="${canonicalUrl}">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" th:content="${title}">
+        <meta name="twitter:description" th:content="${metaDescription}">
+        <title th:text="${title}">
+            SocialBridge
+        </title>
+        <link rel="canonical" th:href="${canonicalUrl}">
+        <link rel="icon" type="image/svg+xml" th:href="@{/favicon.svg}">
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+        <script type="application/ld+json" th:utext="${websiteSchema}"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" th:href="@{/css/app.css}">
+    </head>
+    <body>
+        <div th:fragment="scripts">
+            <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+            </script>
+        </div>
+    </body>
+</html>

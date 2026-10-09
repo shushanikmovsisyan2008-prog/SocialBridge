@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="hy" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <nav th:fragment="nav" class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-primary" th:href="@{/}">
+                    <i class="bi bi-heart-pulse-fill me-2">
+                    </i>
+                    SocialBridge
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                        <li>
+                            <a class="nav-link" th:href="@{/}">
+                                Գլխավոր
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" th:href="@{/about}">
+                                Մեր մասին
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" th:href="@{/services}">
+                                Ծառայություններ
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" th:href="@{/contact}">
+                                Կապ
+                            </a>
+                        </li>
+                        <li><a class="nav-link" th:href="@{/login}">Մուտք</a></li>
+                        <li><a class="btn btn-primary ms-lg-2" th:href="@{/register}">Միանալ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <footer th:fragment="footer" class="footer mt-5">
+            <div class="container py-5">
+                <div class="row g-4">
+                    <div class="col-md-5">
+                        <h4>
+                            <i class="bi bi-heart-pulse-fill me-2">
+                            </i>
+                            SocialBridge
+                        </h4>
+                        <p class="mb-0">
+                            Հստակ տեղեկատվություն՝ սոցիալական աջակցության հնարավորությունները գտնելու համար։
+                        </p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h6>
+                            Ուսումնասիրել
+                        </h6>
+                        <a th:href="@{/services}">
+                            Ծառայություններ
+                        </a>
+                        <a th:href="@{/about}">
+                            Մեր մասին
+                        </a>
+                        <a th:href="@{/contact}">
+                            Կապ
+                        </a>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <h6>
+                            Օգնությա՞ն կարիք ունեք։
+                        </h6>
+                        <p class="mb-1">Ուսումնասիրեք աջակցության տարբերակները և ընտրեք ձեզ հարմար հաջորդ քայլը։</p>
+                        <p class="mb-0">Հեռախոս՝ <a href="tel:+37499511844">+374 99 511 844</a></p>
+                    </div>
+                </div>
+                <hr>
+                <small>
+                    © 2026 SocialBridge
+                </small>
+            </div>
+        </footer>
+    </body>
+</html>
