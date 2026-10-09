@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="hy" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head(${service.name} + ' | SocialBridge')}"></head>
+<body>
+<nav th:replace="~{fragments :: nav}"></nav>
+<section class="page-hero compact"><div class="container">
+<a th:href="@{/services}" class="back-link">← Բոլոր ծառայությունները</a>
+<div class="icon-bubble large mt-4"><i th:class="|bi ${service.icon}|"></i></div>
+<span class="category" th:text="${service.category}"></span>
+<h1 th:text="${service.name}"></h1><p th:text="${service.details}"></p>
+</div></section>
+<main class="container py-5"><div class="contact-card">
+<h2>Գործնական լուծում և իրագործելի ծրագիր</h2>
+<p th:text="${service.solution}"></p>
+<p>Սրանք ընդհանուր առաջարկներ են․ հասանելի ծառայություններն ու աջակցության պայմանները ճշտեք համապատասխան կազմակերպությունից։</p>
+<a class="btn btn-primary" th:href="@{/services}">Դիտել ծառայությունները</a>
+<a class="btn btn-outline-primary ms-2" th:href="@{/contact}">Կապվել մեզ հետ</a>
+</div></main>
+<footer th:replace="~{fragments :: footer}"></footer><div th:replace="~{layout :: scripts}"></div>
+</body></html>

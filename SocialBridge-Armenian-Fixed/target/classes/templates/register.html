@@ -1,0 +1,13 @@
+<!doctype html><html lang="hy" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout :: head('Ստեղծել հաշիվ | SocialBridge')}"></head><body>
+<nav th:replace="~{fragments :: nav}"></nav><main class="auth-page"><section class="form-card auth-card">
+<span class="eyebrow">ՍԿՍԵԼԸ ՀԵՇՏ Է</span><h1>Ստեղծել հաշիվ</h1><p class="text-muted">Դա ընդամենը մի քանի րոպե կտևի։</p>
+<div class="alert alert-danger" th:if="${error}" th:text="${error}"></div>
+<form method="post" th:action="@{/register}"><label for="name">Ձեր անունը</label><input class="form-control" id="name" name="name" required maxlength="80" autocomplete="name">
+<label for="username">Օգտանուն</label><input class="form-control" id="username" name="username" required maxlength="40" autocomplete="username">
+<label for="email">Էլ․ փոստ</label><input class="form-control" id="email" name="email" type="email" required maxlength="120" autocomplete="email">
+<label for="password">Գաղտնաբառ <small class="text-muted">(առնվազն 8 նիշ)</small></label><input class="form-control" id="password" name="password" type="password" minlength="8" required autocomplete="new-password">
+<label for="confirmԳաղտնաբառ">Հաստատել գաղտնաբառը</label><input class="form-control" id="confirmPassword" name="confirmPassword" type="password" minlength="8" required autocomplete="new-password">
+<button class="btn btn-primary w-100 mt-4">Ստեղծել հաշիվ</button></form>
+<p class="mt-4 mb-0">Արդեն գրանցվա՞ծ եք։ <a th:href="@{/login}">Մուտք</a></p>
+</section></main><footer th:replace="~{fragments :: footer}"></footer><div th:replace="~{layout :: scripts}"></div></body></html>

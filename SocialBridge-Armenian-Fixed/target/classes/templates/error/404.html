@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="hy" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout :: head('Էջը չի գտնվել')}">
+    </head>
+    <body>
+        <nav th:replace="~{fragments :: nav}">
+        </nav>
+        <main class="empty-state container">
+            <i class="bi bi-map">
+            </i>
+            <h1>
+                Էջը չի գտնվել
+            </h1>
+            <p>
+                Ձեր փնտրած էջը կարող է տեղափոխված լինել կամ այլևս գոյություն չունենալ։
+            </p>
+            <a th:href="@{/}" class="btn btn-primary">
+                Վերադառնալ գլխավոր էջ
+            </a>
+        </main>
+    </body>
+</html>

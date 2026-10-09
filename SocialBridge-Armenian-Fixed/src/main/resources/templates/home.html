@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="hy" xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="~{layout :: head('SocialBridge | Գտիր աջակցություն')}">
+    </head>
+    <body>
+        <nav th:replace="~{fragments :: nav}">
+        </nav>
+        <main>
+            <section class="hero">
+                <div class="container text-center">
+                    <span class="eyebrow">
+                        ԱՋԱԿՑՈՒԹՅՈՒՆ՝ ՊԱՐԶ ԵՎ ՀԱՍԱՆԵԼԻ
+                    </span>
+                    <h1>
+                        Գտեք սոցիալական աջակցությունը,
+                        <br>
+                        որի կարիքն ունեք։
+                    </h1>
+                    <p>
+                        Ուսումնասիրեք աջակցության տարբերակները և գտեք հստակ հաջորդ քայլը։
+                    </p>
+                    <form class="search-box" method="get" th:action="@{/services}">
+                        <i class="bi bi-search">
+                        </i>
+                        <input name="q" placeholder="Որոնել ծառայություններ, ոլորտներ կամ կազմակերպություններ..." th:value="${query}">
+                        <button class="btn btn-primary">
+                            Որոնել
+                        </button>
+                    </form>
+                </div>
+            </section>
+            <section class="container py-5">
+                <div class="section-heading">
+                    <div>
+                        <span class="eyebrow text-primary">
+                            ԲԱՑԱՀԱՅՏԵՔ ԱՋԱԿՑՈՒԹՅՈՒՆԸ
+                        </span>
+                        <h2>
+                            Ծառայություններ կյանքի կարևոր պահերի համար
+                        </h2>
+                    </div>
+                    <a th:href="@{/services}" class="btn btn-outline-primary">
+                        Դիտել բոլորը
+                        <i class="bi bi-arrow-right">
+                        </i>
+                    </a>
+                </div>
+                <div class="row g-4" th:if="${!services.empty}">
+                    <div class="col-md-6 col-lg-4" th:each="service : ${services}">
+                        <article class="service-card h-100">
+                            <div class="icon-bubble">
+                                <i th:class="|bi ${service.icon}|">
+                                </i>
+                            </div>
+                            <span class="category" th:text="${service.category}">
+                            </span>
+                            <h3 th:text="${service.name}">
+                            </h3>
+                            <p th:text="${service.summary}">
+                            </p>
+                            <a class="stretched-link" th:href="@{/services/{slug}(slug=${service.slug})}">
+                                Իմանալ ավելին
+                                <i class="bi bi-arrow-right">
+                                </i>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+                <div class="empty-state" th:if="${services.empty}">
+                    <i class="bi bi-search">
+                    </i>
+                    <h3>
+                        Ձեր որոնմանը համապատասխան ծառայություն չի գտնվել։
+                    </h3>
+                    <a th:href="@{/services}" class="btn btn-primary">
+                        Դիտել բոլոր ծառայությունները
+                    </a>
+                </div>
+            </section>
+            <section class="trust">
+                <div class="container">
+                    <div class="row align-items-center g-5">
+                        <div class="col-lg-6">
+                            <span class="eyebrow text-primary">
+                                ԻՆՉՈՒ SOCIALBRIDGE
+                            </span>
+                            <h2>
+                                Յուրաքանչյուրն արժանի է հստակ հաջորդ քայլի։
+                            </h2>
+                            <p>
+                                Մենք մեկ պարզ հարթակում կապում ենք մարդկանց տեղական սոցիալական աջակցության հնարավորությունների հետ։
+                            </p>
+                            <div class="d-flex gap-3">
+                                <i class="bi bi-check-circle-fill text-primary fs-4">
+                                </i>
+                                <p>
+                                    <strong>
+                                        Վստահելի ուղղորդում
+                                    </strong>
+                                    <br>
+                                    Հստակ մանրամասներ, դիմելու պայմաններ և կապի տվյալներ։
+                                </p>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <i class="bi bi-check-circle-fill text-primary fs-4">
+                                </i>
+                                <p>
+                                    <strong>
+                                        Մարդն առաջին տեղում է
+                                    </strong>
+                                    <br>
+                                    Ստեղծված է, որպեսզի աջակցություն գտնելը հեշտ լինի։
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="info-panel">
+                                <i class="bi bi-chat-heart-fill">
+                                </i>
+                                <h3>
+                                    Չգիտե՞ք՝ որտեղից սկսել։
+                                </h3>
+                                <p>
+                                    Ուսումնասիրեք ընտանիքի, սննդի, բարեկեցության, բնակարանի, աշխատանքի և համայնքի աջակցության ուղեցույցները։
+                                </p>
+                                <a th:href="@{/contact}" class="btn btn-light">
+                                    Կապվեք մեզ հետ
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer th:replace="~{fragments :: footer}">
+        </footer>
+        <div th:replace="~{layout :: scripts}">
+        </div>
+    </body>
+</html>
